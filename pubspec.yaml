@@ -1,0 +1,176 @@
+name: chat_app_with_firebase
+description: A new Flutter project.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  #cupertino_icons: ^0.1.2
+  font_awesome_flutter: ^8.9.0
+  google_fonts: ^1.1.0
+  http: ^0.12.0+2
+  provider: ^3.1.0+1 #נמצא כאן בקוד הבסיס של ה API
+  url_launcher: ^5.7.2 #ייצוא קישורים לכרום, אינסטגרם ועוד בהתאם...
+  webview_flutter: ^0.3.16 #תצוגת דפדפן פנימיצ
+  hexcolor: ^1.0.4 #מאפשר שימוש בצע בעזרת קוד הקסדצימלי
+  custom_navigator:
+  google_sign_in: ^4.5.3 #התחברות גוגל בלחיצה וקבלת פרטים על המשתמש
+  translator: ^0.1.5 #מתרגם טקסטים
+  share: ^0.6.2+3 #יוצר אפשרות שיתוף נייטיב
+  flutter_form_builder: ^3.13.4
+  shared_preferences: 0.5.8 #שומר (את פרטי הטופס) על המכשיר
+  flutter_svg: ^0.19.0 #מאפשר שימוש ב SVG
+  animate_icons: ^0.0.4 #מייצר אנימציית מעבר בין 2 אייקונים
+  animate_do: ^1.7.3 #מייצר אנימציות מעבר בקלות
+  dart_random_choice: ^0.0.2 #בוחר ערך אקראי מרשימה, שימושי לעדכון מסך הבית (API Link)
+  custom_radio_grouped_button: ^1.0.6 #משמש ליצירת כפתורי בחירת המידות (רדיו)
+  carousel_slider: ^2.3.1 #גלריית תמונות
+  flutter_introduction_tooltip: ^0.0.4
+  extended_image: ^1.1.2 #שומר תמונות מהאינטרנט בקאש
+  introduction_screen: ^1.0.9 #מסכי הסבר בפתיחה ראשונית
+  flare_splash_screen: ^3.0.1
+  #rate_my_app: ^0.7.2 #פופאפ נייטיב, יש להשתמש לאחר שהאפליקציה באוויר
+  #flutter_chips_input: 1.9.0-dev.1
+
+
+  #swipedetector: ^1.2.0
+  #webview_flutter_plus: ^0.1.1+9
+  #flutter_inappwebview: ^4.0.0+4 #לא ניתן להפעיל את הדוגמא
+  #flutter_webview_plugin: ^0.3.11 #הדוגמא לא עובדת
+  #scoped_model: ^1.0.1
+  #solid_bottom_sheet: ^0.1.9
+  #rxdart: ^0.24.1
+  #firebase_auth: ^0.18.0+1
+  #firebase_core: ^0.5.0
+  #firebase_analytics: ^6.0.0
+  #bottom_navy_bar: ^5.5.0
+  #cloud_firestore: ^0.14.0+2
+  #shimmer: ^1.1.1 #אפקט נצנוץ להדגשת ווידג'ט, משמש גם כטעינה
+  #animated_splash: ^1.0.0
+
+
+dev_dependencies:
+  random_color: ^1.0.5
+  change_app_package_name: ^0.1.2
+  flutter_launcher_icons: ^0.8.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/BlackLogoPNG.png"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+
+  assets:
+    - assets/images/
+    - assets/images/2.0x/
+    - assets/images/Categories/
+    - assets/images/FilamentsColors/
+    - assets/images/Recommendation/
+    - assets/images/2.0x/Recommendation/
+    - assets/images/ImageIcon/
+
+    - assets/SVG/
+    - assets/SVG/FlatIcon/
+    - assets/SVG/Material/
+
+
+  fonts:
+
+    - family: Assistant
+      fonts:
+        - asset: assets/fonts/Assistant-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Assistant-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Assistant-Bold.ttf
+          weight: 700
+
+
+    - family: AirStrike
+      fonts:
+        - asset: assets/fonts/airstrikeexpand.ttf
+          weight: 100
+        - asset: assets/fonts/airstrike.ttf
+          weight: 600
+        - asset: assets/fonts/airstrikebold.ttf
+          weight: 700
+
+
+        # An image asset can refer to one or more resolution-specific "variants", see
+        # https://flutter.dev/assets-and-images/#resolution-aware.
+
+        # For details regarding adding assets from package dependencies, see
+        # https://flutter.dev/assets-and-images/#from-packages
+
+        # To add custom fonts to your application, add a fonts section here,
+        # in this "flutter" section. Each entry in this list should have a
+        # "family" key with the font family name, and a "fonts" key with a
+        # list giving the asset and other descriptors for the font. For
+        # example:
+
+        #fonts:
+        # - family: Assistant
+        #  fonts:
+        # - asset: fonts/Assistant-Regular.ttf
+        #  weight: 400
+        #- asset: fonts/Assistant-SemiBold.ttf
+        # weight: 600
+        #- asset: fonts/Assistant-Bold.ttf
+        # weight: 700
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
