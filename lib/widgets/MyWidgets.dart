@@ -148,7 +148,7 @@ class _NewsTileState extends State<NewsTile> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500),
                             ),
-                          ),
+                          ),//
                           Visibility(
                             visible: false, //עקב חוסר תקינות מתמשך, פיצ'ר זה לא ייצא בגרסא 1.0
                             child: widget.isThingSaved ?
