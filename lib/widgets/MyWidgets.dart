@@ -1,11 +1,11 @@
 //Flutter
+import 'package:chat_app_with_firebase/pages/FavoritePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
 import 'package:chat_app_with_firebase/pages/SpiderWebViewV2.dart';
 import 'package:chat_app_with_firebase/pages/ThingWebView.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV2.3/SpiderV35/lib/pages/FavoritePage.dart';
 import 'package:chat_app_with_firebase/pages/CustomNavigator.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,9 +25,7 @@ import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
 import 'DecorationWidgets.dart';
-import 'MyWidgets.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV2.3/SpiderV35/lib/pages/FavoritePage.dart';
-//Packages
+import 'MyWidgets.dart';//Packages
 import 'package:animate_do/animate_do.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';

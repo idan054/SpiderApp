@@ -9,7 +9,6 @@ import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
 import 'DecorationWidgets.dart';
 import 'FeedWidget.dart';
 import 'MyWidgets.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV2.3/SpiderV35/lib/pages/FavoritePage.dart';
 //Packages
 import 'package:animate_do/animate_do.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';

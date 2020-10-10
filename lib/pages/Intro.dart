@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV49clean/SpiderV35/lib/pages/FavoritedPage.dart';
-//Packages
+import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';//Packages
 import 'package:animate_do/animate_do.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -31,7 +29,6 @@ import 'package:flutter/gestures.dart';
 import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
 import 'package:chat_app_with_firebase/pages/SpiderWebViewV2.dart';
 import 'package:chat_app_with_firebase/pages/ThingWebView.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV49clean/SpiderV35/lib/pages/FavoritedPage.dart';
 import 'package:chat_app_with_firebase/pages/CustomNavigator.dart';
 import '../constants.dart';
 //Packages
@@ -46,7 +43,6 @@ import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
-import 'file:///C:/Users/idanb/Desktop/SpiderFlutter/SpiderV49clean/SpiderV35/lib/pages/FavoritedPage.dart';
 //Packages
 import 'package:animate_do/animate_do.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
@@ -62,6 +58,8 @@ import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:chat_app_with_firebase/Services/GoogleSheetsConnection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+import 'FavoritePage.dart';
 
 
 class Intro extends StatelessWidget {
