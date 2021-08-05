@@ -151,12 +151,12 @@ InputDecoration greySearchDecorationThingiLogo (String hintText){
     InputDecoration(
 
       filled: true,
-      fillColor: Hexcolor("#f6f8fa"),
+      fillColor: HexColor("#f6f8fa"),
       contentPadding: EdgeInsets.only(left: 0, right: 20, top: 10, bottom: 10), //EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
       hintText: hintText,
       hintStyle:
       TextStyle (
-          color: Hexcolor("#808c8e")
+          color: HexColor("#808c8e")
       ),
 
       border: OutlineInputBorder(

@@ -22,7 +22,7 @@ GoogleTranslator translator = new GoogleTranslator();   //using google translato
 
 class _HomePageState extends State<HomePage> {
   String searchValue = ""; //ברירת המחדל לפני פעולת חיפוש אקטיבית
-  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search,color: Hexcolor("#c81c19")); //הגדרת ברירת המחדל
+  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search,color: HexColor("#c81c19")); //הגדרת ברירת המחדל
   Widget dependSearchBar = Image( image: AssetImage("assets/images/SpiderLogo.png"),height: 25,);
   Widget spiderAppBar =    Image( image: AssetImage("assets/images/SpiderLogo.png"),height: 25,);
 

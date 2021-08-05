@@ -26,7 +26,9 @@ dependencies:
   font_awesome_flutter: ^8.9.0
   google_fonts: ^1.1.0
   http: ^0.12.0+2
-  provider: ^3.1.0+1 #נמצא כאן בקוד הבסיס של ה API
+#  provider: ^3.1.0+1 #נמצא כאן בקוד הבסיס של ה API
+  provider: 5.0.0 #נמצא כאן בקוד הבסיס של ה API
+#  flutter_form_builder: ^3.13.4
   url_launcher: ^5.7.2 #ייצוא קישורים לכרום, אינסטגרם ועוד בהתאם...
   webview_flutter: ^0.3.16 #תצוגת דפדפן פנימיצ
   hexcolor: ^1.0.4 #מאפשר שימוש בצע בעזרת קוד הקסדצימלי
@@ -34,7 +36,6 @@ dependencies:
   google_sign_in: ^4.5.3 #התחברות גוגל בלחיצה וקבלת פרטים על המשתמש
   translator: ^0.1.5 #מתרגם טקסטים
   share: ^0.6.2+3 #יוצר אפשרות שיתוף נייטיב
-  flutter_form_builder: ^3.13.4
   shared_preferences: 0.5.8 #שומר (את פרטי הטופס) על המכשיר
   flutter_svg: ^0.19.0 #מאפשר שימוש ב SVG
   animate_icons: ^0.0.4 #מייצר אנימציית מעבר בין 2 אייקונים
@@ -43,7 +44,7 @@ dependencies:
   custom_radio_grouped_button: ^1.0.6 #משמש ליצירת כפתורי בחירת המידות (רדיו)
   carousel_slider: ^2.3.1 #גלריית תמונות
   flutter_introduction_tooltip: ^0.0.4
-  extended_image: ^1.1.2 #שומר תמונות מהאינטרנט בקאש
+#  extended_image: ^1.1.2 #שומר תמונות מהאינטרנט בקאש
   introduction_screen: ^1.0.9 #מסכי הסבר בפתיחה ראשונית
   flare_splash_screen: ^3.0.1
   #rate_my_app: ^0.7.2 #פופאפ נייטיב, יש להשתמש לאחר שהאפליקציה באוויר

@@ -18,7 +18,6 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:translator/translator.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 import 'DecorationWidgets.dart';
 
@@ -109,15 +108,15 @@ class _AppBarWidgetV2State extends State<AppBarWidgetV2> {
             icon: FaIcon(FontAwesomeIcons.grinStars, color: spiderRed),
             onPressed: () {
 
-              showDialog(
-                  barrierDismissible: true, //כדי לצאת
-                  barrierColor: backgroundColor,
-                  context: context,
-                  builder: (context) =>
-                      FadeIn(
-                          duration: Duration(milliseconds: 300),
-                          child: advertiser3dPrinterDialog(
-                              showOnlyShareButton: true ) ));
+              // showDialog(
+              //     barrierDismissible: true, //כדי לצאת
+              //     barrierColor: backgroundColor,
+              //     context: context,
+              //     builder: (context) =>
+              //         FadeIn(
+              //             duration: Duration(milliseconds: 300),
+              //             child: advertiser3dPrinterDialog(
+              //                 showOnlyShareButton: true ) ));
 
 /*              showDialog(
                   //barrierDismissible: true, //כדי לצאת
@@ -166,7 +165,7 @@ class _AppBarWidgetV2State extends State<AppBarWidgetV2> {
               child: Container(
                 width: 35,
                 decoration: BoxDecoration(
-                    color: Hexcolor("#f6f8fa"),
+                    color: HexColor("#f6f8fa"),
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                         //onError: ImageErrorListener(),
@@ -287,7 +286,7 @@ class _AppBarWidgetV2State extends State<AppBarWidgetV2> {
         padding: const EdgeInsets.only(top: 2),
         child: TextField( //Expand יש לנסות לעטוף ב!
           style: simpleText(fontSize: 18, color: Colors.grey[500]),
-          cursorColor: Hexcolor("#c81c19"),
+          cursorColor: HexColor("#c81c19"),
           textAlign: TextAlign.end,
           textDirection: TextDirection.ltr,
           autofocus: true,

@@ -1,5 +1,4 @@
 //Flutter
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
@@ -12,7 +11,6 @@ import 'MyWidgets.dart';
 //Packages
 import 'package:animate_do/animate_do.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
     // import 'package:solid_bottom_sheet/solid_bottom_sheet.dart'; //_controllerמשוייך לקונטרולר שכולו לא פעיל
 import 'package:translator/translator.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +22,6 @@ import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:chat_app_with_firebase/Services/GoogleSheetsConnection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import 'OfficialBottomSheet.dart';
 
 class FeedWidget extends StatefulWidget {
 
@@ -274,7 +270,7 @@ class _FeedWidgetState extends State<FeedWidget> {
 //                          timer.cancel();
 //                          showMyBottomSheet = true;
 //                          myBottomSheetV2(context: context, /*scrollController: scrollController*/);
-                           settingModalBottomSheet(context);
+//                            settingModalBottomSheet(context);
 //                          showMyBottomSheet = true;
                           orderedURL = ApiValue.urlModel3; //favUrlList[index];
                           orderedNameModel = ApiValue.nameModel3; //favTitleList[index];

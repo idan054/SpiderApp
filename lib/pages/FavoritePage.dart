@@ -1,4 +1,3 @@
-import 'package:chat_app_with_firebase/widgets/OfficialBottomSheet.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app_with_firebase/widgets/FeedWidget.dart';
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
@@ -37,7 +36,7 @@ GoogleTranslator translator = new GoogleTranslator();   //using google translato
 
 class _FavoritePageState extends State<FavoritePage> {
   String searchValue = ""; //ברירת המחדל לפני פעולת חיפוש אקטיבית
-  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search, color: Hexcolor("#c81c19")); //הגדרת ברירת המחדל
+  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search, color: HexColor("#c81c19")); //הגדרת ברירת המחדל
   Widget dependSearchBar = Image(
     image: AssetImage("assets/images/SpiderLogo.png"), height: 25,);
   Widget spiderAppBar = Image(
@@ -86,7 +85,7 @@ class _FavoritePageState extends State<FavoritePage> {
 //                          timer.cancel();
 //                          showMyBottomSheet = true;
 //                          myBottomSheetV2(context: context, /*scrollController: scrollController*/);
-                    settingModalBottomSheet(context);
+//                     settingModalBottomSheet(context);
 //                          showMyBottomSheet = true;
 //                   orderedURL = favUrlList[index]; //favUrlList[index];
                     orderedURL = reversedUrlList[index]; //favUrlList[index];

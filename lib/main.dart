@@ -1,14 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 import 'package:chat_app_with_firebase/pages/CustomNavigator.dart';
-import 'package:chat_app_with_firebase/pages/Intro.dart';
-import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
-import 'package:chat_app_with_firebase/pages/SpiderWebViewV2.dart';
-import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
-import 'package:chat_app_with_firebase/pages/Intro.dart';
-import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
-import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
-import 'package:flare_splash_screen/flare_splash_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,19 +10,6 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import 'package:animate_do/animate_do.dart';
-import 'package:chat_app_with_firebase/constants.dart';
-import 'package:chat_app_with_firebase/pages/CustomNavigator.dart';
-import 'package:chat_app_with_firebase/pages/Intro.dart';
-import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
-import 'package:chat_app_with_firebase/pages/SpiderWebViewV2.dart';
-import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
-import 'package:chat_app_with_firebase/pages/Intro.dart';
-import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
-import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
-import 'package:flare_splash_screen/flare_splash_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 
@@ -96,9 +76,10 @@ class _AppState extends State<App> {
       ),
       home:
       // advertiser3dPrinterDialog(showOnlyShareButton: true)
-      isShowIntro ?
-        Intro()
-      : Stack(
+      // isShowIntro ?
+      //   Intro()
+      // :
+      Stack(
         children: [
           CustomNavigator(),
           isSplash ? FadeIn(

@@ -41,8 +41,8 @@ class _CustomNavigatorState extends State<CustomNavigator> {
               },
               children: [
                 ChangeNotifierProvider(
-                  // create: ,
-                  builder: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus תקין!
+                  // builder: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus תקין!
+                  create: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus תקין!
                   child: HomePage(), ),
 
                     SpiderWebViewV2(

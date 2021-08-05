@@ -1,13 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:chat_app_with_firebase/widgets/QuestionAnswer.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:share/share.dart';
@@ -129,14 +126,14 @@ class _JoinAsSellerV2State extends State<JoinAsSellerV2> {
                             Spacer(),
                               GestureDetector(
                                 onTap: () {
-                                  showDialog(
-                                      barrierDismissible: true, //כדי לצאת
-                                      barrierColor: backgroundColor,
-                                      context: context,
-                                      builder: (context) =>
-                                          FadeIn(
-                                              duration: Duration(milliseconds: 300),
-                                              child: advertiser3dPrinterDialog(showOnlyShareButton: false) ));
+                                  // showDialog(
+                                  //     barrierDismissible: true, //כדי לצאת
+                                  //     barrierColor: backgroundColor,
+                                  //     context: context,
+                                  //     builder: (context) =>
+                                  //         FadeIn(
+                                  //             duration: Duration(milliseconds: 300),
+                                  //             child: advertiser3dPrinterDialog(showOnlyShareButton: false) ));
 
                                 },
                                 child: Container(
@@ -382,14 +379,14 @@ class _JoinAsSellerV2State extends State<JoinAsSellerV2> {
                     style: simpleTextBold(fontSize: 18, color: Colors.blue[600]),
                     recognizer: TapGestureRecognizer()..
                     onTap = () {
-                      showDialog(
-                          barrierDismissible: true, //כדי לצאת
-                          barrierColor: backgroundColor,
-                          context: context,
-                          builder: (context) =>
-                              FadeIn(
-                                  duration: Duration(milliseconds: 300),
-                                  child: advertiser3dPrinterDialog(showOnlyShareButton: false) ));
+                      // showDialog(
+                      //     barrierDismissible: true, //כדי לצאת
+                      //     barrierColor: backgroundColor,
+                      //     context: context,
+                      //     builder: (context) =>
+                      //         FadeIn(
+                      //             duration: Duration(milliseconds: 300),
+                      //             child: advertiser3dPrinterDialog(showOnlyShareButton: false) ));
                     },
                   ),
                 ],
