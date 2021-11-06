@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
-import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
 import 'AppBarWidgetV2.dart';
 import 'DecorationWidgets.dart';
 import 'MyWidgets.dart';
@@ -19,10 +18,7 @@ import 'package:chat_app_with_firebase/constants.dart';
 import 'dart:async';
 import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
-import 'package:chat_app_with_firebase/Services/GoogleSheetsConnection.dart';
 import 'package:flutter/gestures.dart';
-
-import 'OfficialBottomSheet.dart';
 
 class FeedWidget extends StatefulWidget {
 
@@ -260,51 +256,6 @@ class _FeedWidgetState extends State<FeedWidget> {
                       title:  ApiValue.nameModel3,//favTitleList[index],
                       postURL: ApiValue.urlModel3, //favUrlList[index],
                       isThingSaved: false,
-                      orderButton: () async {
-                        //_controller.isOpened ? _controller.hide() : _controller.show();
-                        //translateTitle(); //מדפיס את השם מתורגם
-                        setState(() {
-                          sizePrice = 69;
-                          selectedColor = "";   //ניקוי בחירת הצבע לאחר ייצוא לאקסל
-                          showOrderResult = false;
-                          //על מנת להכריח לבחור צבע כל פעם מחדש (פעולה אקטיבית אחת)
-//                          timer.cancel();
-//                          showMyBottomSheet = true;
-//                          myBottomSheetV2(context: context, /*scrollController: scrollController*/);
-                           settingModalBottomSheet(context);
-//                          showMyBottomSheet = true;
-                          orderedURL = ApiValue.urlModel3; //favUrlList[index];
-                          orderedNameModel = ApiValue.nameModel3; //favTitleList[index];
-                          print(orderedURL);
-                        });
-                        // הצגת דיאלוג בפעם הראשונה בלבד, יש לשנות את שם הBool SharedPreferences
-                        // ניתן גם להוריד את הסימן קריאה (!) (כך שיופיע במידה ו*כן* קיים
-                        // כדי להציג "בפעם הראשונה" פעם נוספת
-                    SharedPreferences syncBool = await SharedPreferences.getInstance(); //SharedPreferencesקריאה ל
-                    bool sizeExplainDialog1=syncBool.getBool('sizeExplainDialog1') ?? false; // בדיקה עם בול "watchedIntro" על לא (נצפה)
-                    if(!sizeExplainDialog1 /*כלומר אם sizeExplainSnackBar לא קיים בכלל בזיכרון!*/
-                    ) {
-
-                      Timer(Duration(milliseconds: 400), () {
-                        showDialog(
-                            barrierDismissible: true, //כדי לצאת
-                            barrierColor: Colors.black26,
-                            context: context,
-                            builder: (context) =>
-                                FadeIn(
-                                    duration: Duration(milliseconds: 200),
-                                    child: sizeProductExplainDialog( bottomPadding: MediaQuery.of(context).size.height*0.6 )
-                                ));
-                      });
-
-                      //and when the tutorial ended set watchedIntro to true:
-                      await syncBool.setBool('sizeExplainDialog1', true); //בסיום הפעולה יש לשנות את לא נצפה לנצפה
-
-
-
-                    }
-
-                        }, //orderButton
                           //() { print('${ApiValue.urlModel3}',); },
                     );
                   },

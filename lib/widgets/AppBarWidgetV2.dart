@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:chat_app_with_firebase/constants.dart';
-import 'package:chat_app_with_firebase/pages/FavoritePage.dart';
-import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,8 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
-import 'package:chat_app_with_firebase/pages/FavoritePage.dart';
-import 'package:chat_app_with_firebase/pages/JoinAsSellerV2.dart';
 import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,6 +15,7 @@ import 'package:provider/provider.dart';
 import 'package:translator/translator.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 import 'DecorationWidgets.dart';
+import 'FeedWidget.dart';
 
 class AppBarWidgetV2 extends StatefulWidget {
   @override
@@ -78,190 +75,7 @@ class _AppBarWidgetV2State extends State<AppBarWidgetV2> {
           image: AssetImage("assets/images/SpiderLogo.png"), height: 25,),
       ),
       actions: [
-        /// כפתור הצטרף כיצרן
-        IconButton(
-            iconSize: 26,
-            icon: Icon(Icons.monetization_on, color: spiderRed),
-            onPressed: () {
 
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => JoinAsSellerV2(),
-              ));
-
-/*              showDialog(
-                  //barrierDismissible: true, //כדי לצאת
-                  barrierColor: backgroundColor,
-                  context: context,
-                  builder: (context) =>
-                      FadeIn(
-                       duration: Duration(milliseconds: 300),
-                       child: seller3PointsDialog())
-              );*/
-
-            }
-        ),
-
-        /// כפתור שיתוף
-        IconButton(
-            iconSize: 24,
-            icon: FaIcon(FontAwesomeIcons.grinStars, color: spiderRed),
-            onPressed: () {
-
-              showDialog(
-                  barrierDismissible: true, //כדי לצאת
-                  barrierColor: backgroundColor,
-                  context: context,
-                  builder: (context) =>
-                      FadeIn(
-                          duration: Duration(milliseconds: 300),
-                          child: advertiser3dPrinterDialog(
-                              showOnlyShareButton: true ) ));
-
-/*              showDialog(
-                  //barrierDismissible: true, //כדי לצאת
-                  barrierColor: backgroundColor,
-                  context: context,
-                  builder: (context) =>
-                      FadeIn(
-                       duration: Duration(milliseconds: 300),
-                       child: seller3PointsDialog())
-              );*/
-
-            }
-        ),
-        /// כפתור שמור למועדפים (לא פעיל ולא תקין)
-        Visibility(
-          visible: false,
-          child: IconButton(
-              iconSize: 26,
-              icon: Icon(Icons.bookmark_border, color: spiderRed),
-              onPressed: () {
-
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => FavoritePage(),
-                ));
-
-/*              showDialog(
-                    //barrierDismissible: true, //כדי לצאת
-                    barrierColor: backgroundColor,
-                    context: context,
-                    builder: (context) =>
-                        FadeIn(
-                         duration: Duration(milliseconds: 300),
-                         child: seller3PointsDialog())
-                );*/
-
-              }
-          ),
-        ),
-        /// כפתור התחברות דרך גוגל (לא פעיל ותקין)
-          Visibility(
-            visible: false,
-            child: isLoggedIn ?
-            GestureDetector(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 11.0), //11 xyz
-              child: Container(
-                width: 35,
-                decoration: BoxDecoration(
-                    // color: HexColor("#f6f8fa"),
-                    color: Colors.lightGreenAccent,
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        //onError: ImageErrorListener(),
-                        image:  NetworkImage(_googleSignIn.currentUser.photoUrl),
-                        fit: BoxFit.fill
-                    )
-                ),
-              ),
-            ),
-
-            onTap:   () {
-              showDialog(
-                //barrierDismissible: true, //כדי לצאת
-                context: context,
-                builder: (context) =>
-                    Dialog(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            15),),
-                      elevation: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20, //20
-                          vertical: 10, //10
-                        ),
-                        child: IntrinsicWidth(
-                          child: IntrinsicHeight(
-                            child: Column(
-                              children: <Widget>[
-                                SizedBox(height: 10),
-                                Text(
-                                  "?מעוניין להתנתק",
-                                  style:
-                                  TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: "Assistant",
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                SizedBox(height: 15),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .center,
-                                  children: <Widget>[
-                                    Spacer(),
-                                    FlatButton(
-                                      color: Colors.blue,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius
-                                            .circular(99),),
-
-                                      child: Text(
-                                        "ביטול", style: TextStyle(
-                                          color: Colors.white
-                                      ),),
-                                      onPressed: () {
-                                        Navigator.pop(context, 'העלמות התראה');
-                                      },
-                                    ),
-                                    Spacer(),
-                                    FlatButton(
-                                      color: Colors.blue,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius
-                                            .circular(99),),
-
-                                      child: Text(
-                                        "התנתק",
-                                        style: TextStyle(
-                                            color: Colors.white
-                                        ),),
-                                      onPressed: () {
-                                        _logout();
-                                        Navigator.pop(context, 'העלמות התראה');
-                                      },
-                                    ),
-                                    Spacer(),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-              );
-            },
-
-        )
-            : IconButton(
-            iconSize: 26,
-            icon: Icon(Icons.perm_identity, color: Colors.red[900]),
-            onPressed: () { _login(); },
-        ),
-          ),
         //endregion כפתור התחברות לגוגל
       ],
     );

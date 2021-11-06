@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 //MyPages & Widgets
-import 'package:chat_app_with_firebase/pages/CustomNavigator.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 //Packages
 import 'package:share/share.dart';
