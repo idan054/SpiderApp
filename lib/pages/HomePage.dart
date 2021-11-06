@@ -33,26 +33,6 @@ class _HomePageState extends State<HomePage> {
   }
 
 
-  Widget _buildMainFeed(BuildContext context,FeedStatus dynamic) {
-
-    switch(dynamic.loadingStatus) {
-      case LoadingStatus.searching: 
-        return Center(child: Padding(
-          padding: const EdgeInsets.only(top: 270),
-          child: CircularProgressIndicator(strokeWidth: 2),
-        ));
-
-      case LoadingStatus.empty: 
-        return Align(child: Text("No results found!"));
-
-      case LoadingStatus.completed: 
-        return Expanded(child:
-
-           FeedWidget(
-          modelApiValues: dynamic.listOfFeedStatus,
-          ));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +42,30 @@ class _HomePageState extends State<HomePage> {
       Scaffold(
         body:  Column(
           children: [
-            _buildMainFeed(context,finalFeedStatus),
+            MainFeed(context,finalFeedStatus),
           ],
         ),
     );
+  }
+}
+
+Widget MainFeed(BuildContext context,FeedStatus dynamic) {
+
+  switch(dynamic.loadingStatus) {
+    case LoadingStatus.searching:
+      return Center(child: Padding(
+        padding: const EdgeInsets.only(top: 270),
+        child: CircularProgressIndicator(strokeWidth: 2),
+      ));
+
+    case LoadingStatus.empty:
+      return Align(child: Text("No results found!"));
+
+    case LoadingStatus.completed:
+      return Expanded(child:
+
+      FeedWidget(
+        modelApiValues: dynamic.listOfFeedStatus,
+      ));
   }
 }
