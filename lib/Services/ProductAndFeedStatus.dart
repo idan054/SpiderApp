@@ -59,6 +59,7 @@ class FeedStatus extends ChangeNotifier {
   List<X3ModelString> listOfFeedStatus = List<X3ModelString>();
 
   Future<void> feedStatusPopular() async {
+    print('FeedStatus feedStatusPopular');
     this.loadingStatus = LoadingStatus.searching;
     notifyListeners();
     List<X2SetFeedBy> webViewPage = await Webservice().setFeedByPopular();
@@ -69,6 +70,7 @@ class FeedStatus extends ChangeNotifier {
   }
 
   Future<void> feedStatusSearch(String keyword) async { /// יוצר את אפשרות החיפוש ///
+    print('FeedStatus feedStatusSearch');
     this.loadingStatus = LoadingStatus.searching;
     notifyListeners();
     List<X2SetFeedBy> theKeyword = await Webservice().setFeedByKeyword(keyword);
@@ -78,6 +80,7 @@ class FeedStatus extends ChangeNotifier {
   }
 
   Future<void> feedStatusCategory(String category) async { /// יוצר את אפשרות החיפוש ///
+    print('FeedStatus feedStatusCategory');
     this.loadingStatus = LoadingStatus.searching;
     notifyListeners();
     List<X2SetFeedBy> theKeyword = await Webservice().setFeedByCategory(category);

@@ -45,14 +45,15 @@ class _CustomNavigatorState extends State<CustomNavigator> {
 
                 // FutureBuilder(
                 //   initialData: FeedStatus(),
-                //     builder:(context, snapshot) => NewHomePage(),),
+                //     builder:(context, snapshot) => HomePage(),),
 
                 ChangeNotifierProvider(
                 // ListenableProvider(
                 // Provider(
-                  // create: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus
+                //   value: FeedStatus().feedStatusPopular(),
                   create: (context) => FeedStatus(),
-                  builder: (context, child) => NewHomePage(),
+                  // create: (context) => FeedStatus().feedStatusPopular(),
+                  builder: (context, child) => HomePage(),
                   // child: NewHomePage(),
                 ),
 

@@ -6,18 +6,19 @@ import 'package:http/http.dart' as http;
 
 var defaultList = ['featured','popular' ,'verified','newest'];
 var randomHome = randomChoice(defaultList);
+var thingiToken = '76a96e8a8905232b8f9d1645eeada242';
 
-class Constants { //https://api.thingiverse.com/popular/?access_token=5ddb8eeeb534d2e001918930d35b90a9
-  // static String defaultFeed =  "https://api.thingiverse.com/search/news?access_token=5ddb8eeeb534d2e001918930d35b90a9";
-  static String defaultFeed =  "https://api.thingiverse.com/$randomHome/?access_token=5ddb8eeeb534d2e001918930d35b90a9";
+class Constants { //https://api.thingiverse.com/popular/?access_token=$thingiToken
+  // static String defaultFeed =  "https://api.thingiverse.com/search/news?access_token=$thingiToken";
+  static String defaultFeed =  "https://api.thingiverse.com/$randomHome/?access_token=$thingiToken";
 
 
   static String feedByKeyword(String keyword) {
-    return  "https://api.thingiverse.com/search/$keyword?access_token=5ddb8eeeb534d2e001918930d35b90a9"; //אפשר לשים כאן כל דבר, לייתר ביטחון...
+    return  "https://api.thingiverse.com/search/$keyword?access_token=$thingiToken"; //אפשר לשים כאן כל דבר, לייתר ביטחון...
   }
 
   static String feedByCategory(String category) {
-    return  "https://api.thingiverse.com/categories/$category/things?access_token=5ddb8eeeb534d2e001918930d35b90a9"; //אפשר לשים כאן כל דבר, לייתר ביטחון...
+    return  "https://api.thingiverse.com/categories/$category/things?access_token=$thingiToken"; //אפשר לשים כאן כל דבר, לייתר ביטחון...
   }
 
 }
@@ -26,6 +27,7 @@ class Webservice {
 
   Future<List<X2SetFeedBy>> setFeedByPopular() async {
     /// קטע זה מציג את המסך הראשי (קישור סטטי)
+    print("A");
     final response = await http.get(Uri.parse(Constants.defaultFeed));
 
     if (response.statusCode == 200) {
@@ -34,12 +36,13 @@ class Webservice {
       Iterable postList = result; // result["hits"];
       return postList.map((article) => X2SetFeedBy.fromJSON(article)).toList();
     } else {
-      throw Exception("Failed to get top news");
+      print("Failed to get top news");
     }
   }
 
   Future<List<X2SetFeedBy>> setFeedByKeyword(String keyword) async {
     /// קטע זה מאפשר את יכולת החיפוש
+    print("B");
     final response = await http.get(Uri.parse(Constants.feedByKeyword(keyword)));
         if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
@@ -52,6 +55,7 @@ class Webservice {
 
   Future<List<X2SetFeedBy>> setFeedByCategory(String category) async {
     /// קטע זה מאפשר את יכולת החיפוש
+    print("C");
     final response = await http.get(Uri.parse(Constants.feedByCategory(category)));
     if (response.statusCode == 200) {
       final List<X2SetFeedBy> categories = categoryArrayFromJson(response.body);
