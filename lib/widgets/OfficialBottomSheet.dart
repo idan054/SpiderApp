@@ -1,17 +1,16 @@
 //Flutter
 import 'package:chat_app_with_firebase/pages/Intro.dart';
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
 import 'DecorationWidgets.dart';
 import 'FeedWidget.dart';
 import 'MyWidgets.dart';
 //Packages
 import 'package:animate_do/animate_do.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 // import 'package:solid_bottom_sheet/solid_bottom_sheet.dart'; //_controllerמשוייך לקונטרולר שכולו לא פעיל
 import 'package:translator/translator.dart';
@@ -23,7 +22,6 @@ import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:chat_app_with_firebase/Services/GoogleSheetsConnection.dart';
 import 'package:flutter/gestures.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
 final ValueChanged _onChanged = (val) => print(val);
@@ -145,7 +143,7 @@ void settingModalBottomSheet(context){
                                   borderSide: new BorderSide(
                                       color: Colors.white.withOpacity(0.00), width: 0)),
                               selectedColor: Colors.black12,
-                              //Hexcolor("#edf0f2"),
+                              //HexColor("#edf0f2"),
                               unSelectedColor: Colors.white70,
                               buttonTextStyle: ButtonTextStyle(
                                   selectedColor: Colors.black,
@@ -207,13 +205,13 @@ void settingModalBottomSheet(context){
                         FormBuilder(
                           key: _fbKey,
 //                              initialValue: { 'בחר_צבע': "שחור",}, //ברירת מחדל
-                          readOnly: false,
+//                           readOnly: false,
                           child: Container(
 //                                color: Colors.red,
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             child: FormBuilderChoiceChip(
                               alignment: WrapAlignment.center,
-                              attribute: 'בחר_צבע',
+                              name: 'בחר_צבע',
                               spacing: 7,
                               runSpacing: 10,
                               shape: RoundedRectangleBorder(
@@ -600,7 +598,7 @@ void settingModalBottomSheet(context){
                                                                               textDirection: TextDirection.rtl,
                                                                               child: FormBuilderTextField(
                                                                                 controller: phoneTextEditingController,
-                                                                                attribute: 'phone_number',
+                                                                                name: 'phone_number',
 //                                  initialValue: '',
                                                                                 maxLength: 10,
                                                                                 cursorColor: Colors.grey[800], //spiderRed,
@@ -612,12 +610,12 @@ void settingModalBottomSheet(context){
                                                                                   svgIcon: "assets/SVG/Material/phone-24px.svg",
                                                                                 ),
                                                                                 onChanged: _onChanged,
-                                                                                validators: [
+                                  /*                                              validators: [
                                                                                   FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                                                                                   FormBuilderValidators.numeric(errorText: "אנא הכנס מס' טלפון תקין"), // מספרים בלבד
                                                                                   FormBuilderValidators.maxLength(10, errorText: "הכנס בדיוק 10 ספרות"),
                                                                                   FormBuilderValidators.minLength(10, errorText: "הכנס בדיוק 10 ספרות"),
-                                                                                ],
+                                                                                ],*/
                                                                               ),
                                                                             ),
                                                                           ),
@@ -630,7 +628,7 @@ void settingModalBottomSheet(context){
                                                                               textDirection: TextDirection.rtl,
                                                                               child: FormBuilderTextField(
                                                                                 controller: fullNameTextEditingController,
-                                                                                attribute: 'Full_Name',
+                                                                                name: 'Full_Name',
 //                                  initialValue: '',
                                                                                 cursorColor: Colors.grey[800], //spiderRed,
                                                                                 textAlign: TextAlign.end,
@@ -641,9 +639,9 @@ void settingModalBottomSheet(context){
                                                                                   svgIcon: "assets/SVG/Material/perm_identity_profile-24px.svg",
                                                                                 ),
                                                                                 onChanged: _onChanged,
-                                                                                validators: [
+                                                                    /*            validators: [
                                                                                   FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                                                                                ],
+                                                                                ],*/
                                                                               ),
                                                                             ),
                                                                           ),
@@ -655,7 +653,7 @@ void settingModalBottomSheet(context){
                                                                         textDirection: TextDirection.rtl,
                                                                         child: FormBuilderTextField(
                                                                           controller: mailTextEditingController,
-                                                                          attribute: 'Email',
+                                                                          name: 'Email',
 //                            initialValue: /*isLoggedIn ? _googleSignIn.currentUser.email :*/ "",
                                                                           cursorColor: Colors.grey[800], //spiderRed,
                                                                           textAlign: TextAlign.end,
@@ -666,10 +664,10 @@ void settingModalBottomSheet(context){
                                                                             svgIcon: "assets/SVG/Material/alternate_email-24px.svg",
                                                                           ),
                                                                           onChanged: _onChanged,
-                                                                          validators: [
+                                                              /*            validators: [
                                                                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                                                                             FormBuilderValidators.email(errorText: "אנא הכנס מייל תקין"),
-                                                                          ],
+                                                                          ],*/
                                                                         ),
                                                                       ),
 
@@ -683,7 +681,7 @@ void settingModalBottomSheet(context){
                                                                               textDirection: TextDirection.rtl,
                                                                               child: FormBuilderTextField(
                                                                                 controller: streetTextEditingController,
-                                                                                attribute: 'Street_And_Number',
+                                                                                name: 'Street_And_Number',
 //                                  initialValue: '',
                                                                                 cursorColor: Colors.grey[800], //spiderRed,
                                                                                 textAlign: TextAlign.end,
@@ -694,9 +692,9 @@ void settingModalBottomSheet(context){
                                                                                   svgIcon: "assets/SVG/Material/home-24px-round.svg",
                                                                                 ),
                                                                                 onChanged: _onChanged,
-                                                                                validators: [
+                                                                    /*            validators: [
                                                                                   FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                                                                                ],
+                                                                                ],*/
                                                                               ),
                                                                             ),
                                                                           ),
@@ -710,7 +708,7 @@ void settingModalBottomSheet(context){
                                                                               textDirection: TextDirection.rtl,
                                                                               child: FormBuilderTextField(
                                                                                 controller: cityTextEditingController,
-                                                                                attribute: 'City',
+                                                                                name: 'City',
                                                                                 //                                  initialValue: '',
                                                                                 cursorColor: Colors.grey[800], //spiderRed,
                                                                                 textAlign: TextAlign.end,
@@ -721,9 +719,9 @@ void settingModalBottomSheet(context){
                                                                                   svgIcon: "assets/SVG/Material/location_on-24px.svg",
                                                                                 ),
                                                                                 onChanged: _onChanged,
-                                                                                validators: [
+                                                                 /*               validators: [
                                                                                   FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                                                                                ],
+                                                                                ],*/
                                                                               ),
                                                                             ),
                                                                           ),
@@ -747,7 +745,7 @@ void settingModalBottomSheet(context){
                                                                                             value: checked[i],
                                                                                             key: checkBox,
                                                                                             checkColor: Colors.grey[500],
-                                                                                            // activeColor: Hexcolor("#f6f8fa"),//Hexcolor("#fafafa"),
+                                                                                            // activeColor: HexColor("#f6f8fa"),//HexColor("#fafafa"),
                                                                                             activeColor: Colors.black.withOpacity(0.05),
                                                                                             onChanged: i == 4
                                                                                                 ? null
@@ -777,7 +775,7 @@ void settingModalBottomSheet(context){
                                                                                         textDirection: TextDirection.rtl,
                                                                                         child: FormBuilderTextField(
                                                                                           controller: referredTextEditingController,
-                                                                                          attribute: 'referred',
+                                                                                          name: 'referred',
 //                            initialValue: /*isLoggedIn ? _googleSignIn.currentUser.email :*/ "",
                                                                                           cursorColor: Colors.grey[800], //spiderRed,
                                                                                           textAlign: TextAlign.start,

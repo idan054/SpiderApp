@@ -102,7 +102,7 @@ class _QuestionAnswerState extends State<QuestionAnswer> {
                             return true;
                           },
                           duration: Duration(milliseconds: 150),
-                          color: Colors.black.withOpacity(0.20),
+                          // color: Colors.black.withOpacity(0.20),
                           clockwise: false,
                         ),
                       ],

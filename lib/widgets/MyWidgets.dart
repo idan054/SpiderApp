@@ -22,12 +22,7 @@ import 'package:flutter/material.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
-import 'package:chat_app_with_firebase/pages/PaymentWebView.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
-import 'DecorationWidgets.dart';
-import 'MyWidgets.dart';//Packages
-import 'package:animate_do/animate_do.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
+
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 // import 'package:solid_bottom_sheet/solid_bottom_sheet.dart'; //_controllerמשוייך לקונטרולר שכולו לא פעיל
 import 'package:translator/translator.dart';
@@ -39,7 +34,6 @@ import 'package:chat_app_with_firebase/widgets/DecorationWidgets.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
 import 'package:chat_app_with_firebase/Services/GoogleSheetsConnection.dart';
 import 'package:flutter/gestures.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 
 // import 'package:url_launcher/url_launcher.dart';
@@ -314,7 +308,7 @@ class _NewsTileState extends State<NewsTile> {
 
                           //region FlatButton צבע מלא
                           /* FlatButton(
-                            color: Colors.blue,//Hexcolor("#c81c19"),
+                            color: Colors.blue,//HexColor("#c81c19"),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius
                                   .circular(99),),
@@ -572,7 +566,7 @@ Widget deliveryForm({
                       Flexible(
                         child: FormBuilderTextField(
                           controller: phoneController,
-                          attribute: 'phone_number',
+                          name: 'phone_number',
 //                                  initialValue: '',
                           maxLength: 10,
                           cursorColor: Colors.grey[800], //spiderRed,
@@ -584,7 +578,7 @@ Widget deliveryForm({
                               svgIcon: "assets/SVG/Material/phone-24px.svg"
                           ),
                           onChanged: _onChanged,
-                          validators: [
+                          validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                             FormBuilderValidators.numeric(errorText: "אנא הכנס מספרים בלבד"), // מספרים בלבד
                             FormBuilderValidators.maxLength(10, errorText: "הכנס בדיוק 10 ספרות"),
@@ -599,7 +593,7 @@ Widget deliveryForm({
                       Flexible(
                         child: FormBuilderTextField(
                           controller: fullNameController,
-                          attribute: 'Full_Name',
+                          name: 'Full_Name',
 //                                  initialValue: '',
                           cursorColor: Colors.grey[800], //spiderRed,
                           textAlign: TextAlign.end,
@@ -610,7 +604,7 @@ Widget deliveryForm({
                               svgIcon: "assets/SVG/Material/perm_identity_profile-24px.svg"
                           ),
                           onChanged: _onChanged,
-                          validators: [
+                          validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                           ],
                         ),
@@ -621,7 +615,7 @@ Widget deliveryForm({
                   /// אימייל
                   FormBuilderTextField(
                     controller: mailController,
-                    attribute: 'Email',
+                    name: 'Email',
 //                            initialValue: /*isLoggedIn ? _googleSignIn.currentUser.email :*/ "",
                     cursorColor: Colors.grey[800], //spiderRed,
                     textAlign: TextAlign.end,
@@ -632,7 +626,7 @@ Widget deliveryForm({
                         svgIcon: "assets/SVG/Material/alternate_email-24px.svg"
                     ),
                     onChanged: _onChanged,
-                    validators: [
+                    validator: [
                       FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                       FormBuilderValidators.email(errorText: "אנא הכנס מייל תקין"),
                     ],
@@ -646,7 +640,7 @@ Widget deliveryForm({
                         flex: 3,
                         child: FormBuilderTextField(
                           controller: streetController,
-                          attribute: 'Street_And_Number',
+                          name: 'Street_And_Number',
 //                                  initialValue: '',
                           cursorColor: Colors.grey[800], //spiderRed,
                           textAlign: TextAlign.end,
@@ -657,7 +651,7 @@ Widget deliveryForm({
                               svgIcon: "assets/SVG/Material/home-24px-round.svg"
                           ),
                           onChanged: _onChanged,
-                          validators: [
+                          validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                           ],
                         ),
@@ -670,7 +664,7 @@ Widget deliveryForm({
                         flex: 2,
                         child: FormBuilderTextField(
                           controller: cityController,
-                          attribute: 'City',
+                          name: 'City',
 //                                  initialValue: '',
                           cursorColor: Colors.grey[800], //spiderRed,
                           textAlign: TextAlign.end,
@@ -681,7 +675,7 @@ Widget deliveryForm({
                               svgIcon: "assets/SVG/Material/location_on-24px.svg"
                           ),
                           onChanged: _onChanged,
-                          validators: [
+                          validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                           ],
                         ),
@@ -873,7 +867,7 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                         textDirection: TextDirection.rtl,
                         child: FormBuilderTextField(
                           controller: advertiserNameTextEditingController,
-                          attribute: 'advertiserName',
+                          name: 'advertiserName',
 //                                  initialValue: '',
                           cursorColor: Colors.grey[800], //spiderRed,
                           textAlign: TextAlign.start,
@@ -884,9 +878,9 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                             svgIcon: "assets/SVG/Material/perm_identity_profile-24px.svg",
                           ),
                           onChanged: _onChanged,
-                          validators: [
+                     /*     validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                          ],
+                          ],*/
                           onSaved: (newValue) {
                             advertiserName = newValue;
                             // advertiserNameTextEditingController.text = newValue;
@@ -901,7 +895,7 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                         textDirection: TextDirection.rtl,
                         child: FormBuilderTextField(
                           controller: whatsAppTextEditingController,
-                          attribute: 'whatsAppNumber',
+                          name: 'whatsAppNumber',
 //                                  initialValue: '',
                           maxLength: 10,
                           cursorColor: Colors.grey[800], //spiderRed,
@@ -913,12 +907,12 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                             svgIcon: "assets/SVG/whatsapp.svg",
                           ),
                           onChanged: _onChanged,
-                          validators: [
+/*                          validator: [
                             FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
                             FormBuilderValidators.numeric(errorText: "אנא הכנס מס' טלפון תקין"), // מספרים בלבד
                             FormBuilderValidators.maxLength(10, errorText: "הכנס בדיוק 10 ספרות"),
                             FormBuilderValidators.minLength(10, errorText: "הכנס בדיוק 10 ספרות"),
-                          ],
+                          ],*/
                           onSaved: (newValue) {
                             whatsAppNumber = newValue;
                             // whatsAppTextEditingController.text = newValue;
@@ -1177,7 +1171,7 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                                             textDirection: TextDirection.rtl,
                                             child: FormBuilderTextField(
                                               controller: advertiserNameTextEditingController,
-                                              attribute: 'advertiserName',
+                                              name: 'advertiserName',
 //                                  initialValue: '',
                                               cursorColor: Colors.grey[800], //spiderRed,
                                               textAlign: TextAlign.start,
@@ -1188,9 +1182,9 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                                                 svgIcon: "assets/SVG/Material/perm_identity_profile-24px.svg",
                                               ),
                                               onChanged: _onChanged,
-                                              validators: [
+                            /*                  validator: [
                                                 FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                                              ],
+                                              ],*/
                                               onSaved: (newValue) {
                                                 advertiserName = newValue;
                                                 // advertiserNameTextEditingController.text = newValue;
@@ -1204,8 +1198,9 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                                           Directionality(
                                             textDirection: TextDirection.rtl,
                                             child: FormBuilderTextField(
+                                              
                                               controller: whatsAppTextEditingController,
-                                              attribute: 'whatsAppNumber',
+                                              name: 'whatsAppNumber',
 //                                  initialValue: '',
                                               maxLength: 10,
                                               cursorColor: Colors.grey[800], //spiderRed,
@@ -1217,12 +1212,14 @@ Widget advertiser3dPrinterDialog ({@required showOnlyShareButton}) { //דיאל�
                                                 svgIcon: "assets/SVG/whatsapp.svg",
                                               ),
                                               onChanged: _onChanged,
-                                              validators: [
-                                                FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
-                                                FormBuilderValidators.numeric(errorText: "אנא הכנס מס' טלפון תקין"), // מספרים בלבד
-                                                FormBuilderValidators.maxLength(10, errorText: "הכנס בדיוק 10 ספרות"),
-                                                FormBuilderValidators.minLength(10, errorText: "הכנס בדיוק 10 ספרות"),
-                                              ],
+                                              
+                                              // validator:
+                                              // [
+                                              //   FormBuilderValidators.required(errorText: "שדה זה הוא חובה"), //שדה זה הוא חובה
+                                              //   FormBuilderValidators.numeric(errorText: "אנא הכנס מס' טלפון תקין"), // מספרים בלבד
+                                                // FormBuilderValidators.maxLength(10, errorText: "הכנס בדיוק 10 ספרות"),
+                                                // FormBuilderValidators.minLength(10, errorText: "הכנס בדיוק 10 ספרות"),
+                                              // ],
                                               onSaved: (newValue) {
                                                 whatsAppNumber = newValue;
                                                 // whatsAppTextEditingController.text = newValue;

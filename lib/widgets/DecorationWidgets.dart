@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 
 ///Input Decorations
@@ -18,14 +17,14 @@ InputDecoration greyDeliveryDecorationSvgPrefix ({hintText, /*icons,*/ svgIcon, 
       alignLabelWithHint: true,
       labelText:  hintText,
       labelStyle: TextStyle (
-        color: Colors.grey[500], //Hexcolor("#808c8e")
+        color: Colors.grey[500], //HexColor("#808c8e")
         fontFamily: "Assistant", fontWeight: FontWeight.w600,
       ),
 
 /*      hintText: hintText,
       hintStyle:
       TextStyle (
-          color: Colors.grey[500], //Hexcolor("#808c8e")
+          color: Colors.grey[500], //HexColor("#808c8e")
           fontFamily: "Assistant", fontWeight: FontWeight.w600,
       ),*/
 
@@ -67,7 +66,7 @@ InputDecoration greyDeliveryDecorationImagePrefix ({String hintText, String pref
       hintText: hintText,
       hintStyle:
       TextStyle (
-        color: Colors.grey[500], //Hexcolor("#808c8e")
+        color: Colors.grey[500], //HexColor("#808c8e")
         fontFamily: "Assistant", fontWeight: FontWeight.w600,
       ),
 
@@ -111,12 +110,12 @@ InputDecoration greyDeliveryDecorationNoPrefix ({hintText, /*icons, svgIcon,*/ h
       labelText: labelText,
       labelStyle:
       TextStyle (
-        color: Colors.grey[500], //Hexcolor("#808c8e")
+        color: Colors.grey[500], //HexColor("#808c8e")
         fontFamily: "Assistant", fontWeight: FontWeight.w600,
       ),
       hintStyle:
       TextStyle (
-          color: Colors.grey[500], //Hexcolor("#808c8e")
+          color: Colors.grey[500], //HexColor("#808c8e")
           fontFamily: "Assistant", fontWeight: FontWeight.w600,
       ),
 
@@ -151,12 +150,14 @@ InputDecoration greySearchDecorationThingiLogo (String hintText){
     InputDecoration(
 
       filled: true,
-      fillColor: Hexcolor("#f6f8fa"),
+      // fillColor: HexColor("#f6f8fa"),
+      fillColor: Colors.lightGreenAccent,
       contentPadding: EdgeInsets.only(left: 0, right: 20, top: 10, bottom: 10), //EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
       hintText: hintText,
       hintStyle:
       TextStyle (
-          color: Hexcolor("#808c8e")
+          // color: HexColor("#808c8e")
+          color: Colors.lightGreenAccent
       ),
 
       border: OutlineInputBorder(

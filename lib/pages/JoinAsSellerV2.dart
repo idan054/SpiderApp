@@ -9,7 +9,6 @@ import 'package:chat_app_with_firebase/widgets/QuestionAnswer.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:share/share.dart';
 import 'package:chat_app_with_firebase/constants.dart';
 import 'package:animate_icons/animate_icons.dart';

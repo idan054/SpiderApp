@@ -7,9 +7,10 @@ import 'package:chat_app_with_firebase/pages/SpiderWebViewV2.dart';
 import 'package:custom_navigator/custom_scaffold.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 import 'package:chat_app_with_firebase/constants.dart';
+
+import 'NewHomePage.dart';
 
 /// סרגל תחתון V2 - מוצג בכל העמודים ללא אפשרות החלקה ///
 class CustomNavigator extends StatefulWidget {
@@ -40,10 +41,21 @@ class _CustomNavigatorState extends State<CustomNavigator> {
                 });
               },
               children: [
+                // NewHomePage(),
+
+                // FutureBuilder(
+                //   initialData: FeedStatus(),
+                //     builder:(context, snapshot) => NewHomePage(),),
+
                 ChangeNotifierProvider(
-                  // create: ,
-                  builder: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus תקין!
-                  child: HomePage(), ),
+                // ListenableProvider(
+                // Provider(
+                  // create: (_) => FeedStatus(), /// שיב לב! חשוב לוודא שגם הclass של ProductAndFeedStatus
+                  create: (context) => FeedStatus(),
+                  builder: (context, child) => NewHomePage(),
+                  // child: NewHomePage(),
+                ),
+
 
                     SpiderWebViewV2(
                       spiderLink: currentURL,

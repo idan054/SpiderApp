@@ -15,7 +15,7 @@ class ImagesByIdService {
 
   Future<List<X2GetImages>> setFeedByPopular() async {
     /// קטע זה מציג את המסך הראשי (קישור סטטי)
-    final response = await http.get(Constants.imagesById);
+    final response = await http.get(Uri.parse(Constants.imagesById));
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);

@@ -23,29 +23,38 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   #cupertino_icons: ^0.1.2
-  font_awesome_flutter: ^8.9.0
-  google_fonts: ^1.1.0
-  http: ^0.12.0+2
-  provider: ^3.1.0+1 #נמצא כאן בקוד הבסיס של ה API
-  url_launcher: ^5.7.2 #ייצוא קישורים לכרום, אינסטגרם ועוד בהתאם...
-  webview_flutter: ^0.3.16 #תצוגת דפדפן פנימיצ
-  hexcolor: ^1.0.4 #מאפשר שימוש בצע בעזרת קוד הקסדצימלי
+  font_awesome_flutter: ^9.2.0
+#  google_fonts: ^2.1.0
+  google_fonts:
+  http: ^0.13.4
+  provider: ^6.0.1 #נמצא כאן בקוד הבסיס של ה API
+#  provider: 5.0.0 #נמצא כאן בקוד הבסיס של ה API
+  url_launcher: ^6.0.12 #ייצוא קישורים לכרום, אינסטגרם ועוד בהתאם...
+  webview_flutter: ^2.3.0 #תצוגת דפדפן פנימיצ
+#  hexcolor: ^2.0.5 #מאפשר שימוש בצע בעזרת קוד הקסדצימלי
+#  hexcolor: #מאפשר שימוש בצע בעזרת קוד הקסדצימלי
+#  custom_navigator: 0.2.0
   custom_navigator:
-  google_sign_in: ^4.5.3 #התחברות גוגל בלחיצה וקבלת פרטים על המשתמש
-  translator: ^0.1.5 #מתרגם טקסטים
-  share: ^0.6.2+3 #יוצר אפשרות שיתוף נייטיב
-  flutter_form_builder: ^3.13.4
-  shared_preferences: 0.5.8 #שומר (את פרטי הטופס) על המכשיר
-  flutter_svg: ^0.19.0 #מאפשר שימוש ב SVG
-  animate_icons: ^0.0.4 #מייצר אנימציית מעבר בין 2 אייקונים
-  animate_do: ^1.7.3 #מייצר אנימציות מעבר בקלות
-  dart_random_choice: ^0.0.2 #בוחר ערך אקראי מרשימה, שימושי לעדכון מסך הבית (API Link)
-  custom_radio_grouped_button: ^1.0.6 #משמש ליצירת כפתורי בחירת המידות (רדיו)
-  carousel_slider: ^2.3.1 #גלריית תמונות
-  flutter_introduction_tooltip: ^0.0.4
-  extended_image: ^1.1.2 #שומר תמונות מהאינטרנט בקאש
-  introduction_screen: ^1.0.9 #מסכי הסבר בפתיחה ראשונית
-  flare_splash_screen: ^3.0.1
+#    git:
+#      url: https://github.com/kjawadDeveloper/Custom-navigator.git
+  google_sign_in: ^5.2.1 #התחברות גוגל בלחיצה וקבלת פרטים על המשתמש
+  translator: ^0.1.7 #מתרגם טקסטים
+  share: ^2.0.4 #יוצר אפשרות שיתוף נייטיב
+  flutter_form_builder: ^7.0.0
+  shared_preferences: ^2.0.8 #שומר (את פרטי הטופס) על המכשיר
+  flutter_svg: ^0.23.0+1 #מאפשר שימוש ב SVG
+  animate_icons: ^2.0.0 #מייצר אנימציית מעבר בין 2 אייקונים
+  animate_do: ^2.0.0 #מייצר אנימציות מעבר בקלות
+  dart_random_choice: ^0.1.0-nullsafety.0 #בוחר ערך אקראי מרשימה, שימושי לעדכון מסך הבית (API Link)
+  custom_radio_grouped_button: ^2.1.1 #משמש ליצירת כפתורי בחירת המידות (רדיו)
+  carousel_slider: ^4.0.0 #גלריית תמונות
+#  flutter_introduction_tooltip: ^0.0.4
+#  extended_image: ^5.1.3 #שומר תמונות מהאינטרנט בקאש
+#  extended_image:
+#    git:
+#      url: git://github.com/jonataslaw/extended_image.git
+  introduction_screen: ^2.1.0 #מסכי הסבר בפתיחה ראשונית
+#  flare_splash_screen: ^4.0.0
   #rate_my_app: ^0.7.2 #פופאפ נייטיב, יש להשתמש לאחר שהאפליקציה באוויר
   #flutter_chips_input: 1.9.0-dev.1
 
@@ -67,9 +76,9 @@ dependencies:
 
 
 dev_dependencies:
-  random_color: ^1.0.5
-  change_app_package_name: ^0.1.2
-  flutter_launcher_icons: ^0.8.0
+  random_color: ^1.0.6-nullsafety
+  change_app_package_name: ^1.0.0
+  flutter_launcher_icons: ^0.9.2
   flutter_test:
     sdk: flutter
 

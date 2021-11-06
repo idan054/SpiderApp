@@ -50,7 +50,7 @@ class FormController{
 
   void submitForm(GoogleSheetsOrdersForm googleSheetsConnection) async{
     try{
-      await http.get(URL + googleSheetsConnection.toParameters() ).then(
+      await http.get(Uri.parse(URL + googleSheetsConnection.toParameters()) ).then(
               (response){
             callback(convert.jsonDecode(response.body)['status']);
           });

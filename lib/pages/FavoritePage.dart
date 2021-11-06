@@ -6,7 +6,6 @@ import 'package:chat_app_with_firebase/Services/ProductAndFeedStatus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:translator/translator.dart';
-import 'package:hexcolor/hexcolor.dart';
 //MyPages & Widgets
 import 'package:chat_app_with_firebase/Services/ApiService.dart';
 import 'package:chat_app_with_firebase/widgets/MyWidgets.dart';
@@ -37,7 +36,8 @@ GoogleTranslator translator = new GoogleTranslator();   //using google translato
 
 class _FavoritePageState extends State<FavoritePage> {
   String searchValue = ""; //ברירת המחדל לפני פעולת חיפוש אקטיבית
-  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search, color: Hexcolor("#c81c19")); //הגדרת ברירת המחדל
+  // FaIcon dependIcon = FaIcon(FontAwesomeIcons.search, color: HexColor("#c81c19")); //הגדרת ברירת המחדל
+  FaIcon dependIcon = FaIcon(FontAwesomeIcons.search, color: Colors.lightGreenAccent); //הגדרת ברירת המחדל
   Widget dependSearchBar = Image(
     image: AssetImage("assets/images/SpiderLogo.png"), height: 25,);
   Widget spiderAppBar = Image(

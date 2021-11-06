@@ -26,7 +26,7 @@ class Webservice {
 
   Future<List<X2SetFeedBy>> setFeedByPopular() async {
     /// קטע זה מציג את המסך הראשי (קישור סטטי)
-    final response = await http.get(Constants.defaultFeed);
+    final response = await http.get(Uri.parse(Constants.defaultFeed));
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
@@ -40,19 +40,19 @@ class Webservice {
 
   Future<List<X2SetFeedBy>> setFeedByKeyword(String keyword) async {
     /// קטע זה מאפשר את יכולת החיפוש
-    final response = await http.get(Constants.feedByKeyword(keyword));
-    if (response.statusCode == 200) {
+    final response = await http.get(Uri.parse(Constants.feedByKeyword(keyword)));
+        if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
       Iterable list = result["hits"];
       return list.map((json) => X2SetFeedBy.fromJSON(json)).toList();
     } else {
-      throw Exception("Failed to get news");
+    throw Exception("Failed to get news");
     }
   }
 
   Future<List<X2SetFeedBy>> setFeedByCategory(String category) async {
     /// קטע זה מאפשר את יכולת החיפוש
-    final response = await http.get(Constants.feedByCategory(category));
+    final response = await http.get(Uri.parse(Constants.feedByCategory(category)));
     if (response.statusCode == 200) {
       final List<X2SetFeedBy> categories = categoryArrayFromJson(response.body);
       print(response.body);

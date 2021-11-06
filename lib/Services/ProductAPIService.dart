@@ -14,7 +14,7 @@ class WebProductService {
 
   Future <List<ProductPageBy>> setFeedByProductID(/*String keyword*/) async {
     /// קטע זה מאפשר את יכולת החיפוש
-      final response = await http.get(Constants.productHeadlLine(/*Id*/));
+      final response = await http.get(Uri.parse(Constants.productHeadlLine(/*Id*/)));
 //    try {
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
